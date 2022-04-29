@@ -53,7 +53,7 @@ QVector<double> &Matrix::operator[](const int index)
 Matrix Matrix::operator+(Matrix matrix)
 {
     if (this->getSize() != matrix.getSize())
-        throw MatrixException(MatrixException::errors::SizeError);
+        throw MatrixException(MatrixException::errors::SizeError, this->getSize(), matrix.getSize());
 
     Matrix temp(this->getSize());
     for (int i = 0; i < this->matrix.size(); i++)
@@ -65,7 +65,7 @@ Matrix Matrix::operator+(Matrix matrix)
 Matrix Matrix::operator-(Matrix matrix)
 {
     if (this->getSize() != matrix.getSize())
-        throw MatrixException(MatrixException::errors::SizeError);
+        throw MatrixException(MatrixException::errors::SizeError, this->getSize(), matrix.getSize());
 
     Matrix temp(this->getSize());
     for (int i = 0; i < this->matrix.size(); i++)
@@ -95,7 +95,7 @@ Matrix operator*(const double number, Matrix matrix)
 Matrix Matrix::operator*(Matrix matrix)
 {
     if (this->matrix[0].size() != matrix.matrix.size())
-        throw MatrixException(MatrixException::errors::SizeError);
+        throw MatrixException(MatrixException::errors::SizeError, this->getSize(), matrix.getSize());
 
     Matrix temp(this->matrix.size(), matrix.matrix[0].size());
     for (int i = 0; i < this->matrix.size(); i++)
@@ -125,11 +125,68 @@ Matrix &Matrix::operator=(const Matrix matrix)
 double Matrix::determinant()
 {
     if (!matrix.size())
-        throw MatrixException(MatrixException::errors::IndexError);
+        throw MatrixException(MatrixException::errors::IndexError, getSize());
     if (this->matrix[0].size() != matrix.size())
-        throw MatrixException(MatrixException::errors::DeterminantError);
+        throw MatrixException(MatrixException::errors::DeterminantError, getSize());
 
     return det(matrix);
+}
+
+double Matrix::algAddition(int i, int j)
+{
+    Matrix temp;
+    double a = matrix[i][j];
+    temp.matrix = matrix;
+    temp.delRow(i);
+    temp.delColumn(j);
+    return a * pow(-1, i + j) * temp.determinant();
+}
+
+void Matrix::transpose()
+{
+    if (!matrix.size())
+        throw MatrixException(MatrixException::errors::IndexError, getSize());
+
+    Matrix temp(matrix[0].size(), matrix.size());
+    for (int i = 0; i < matrix.size(); i++)
+        for (int j = 0; j < matrix[i].size(); j++)
+            temp[j][i] = matrix[i][j];
+}
+
+void Matrix::reverse()
+{
+    double d = determinant();
+    if (d == 0)
+        throw MatrixException(MatrixException::errors::ReverseMatrixError);
+
+
+    Matrix tmp(matrix.size(), matrix.size());
+    for (int i = 0; i < matrix.size(); i++)
+        for (int j = 0; j < matrix.size(); j++)
+            tmp[i][j] = d * algAddition(i, j);
+    matrix = tmp.matrix;
+}
+
+void Matrix::delRow(int i)
+{
+    matrix.remove(i);
+}
+
+void Matrix::delColumn(int j)
+{
+    for (int i = 0; i < matrix[0].size(); i++)
+        matrix[i].remove(j);
+}
+
+void Matrix::swapRows(int i1, int i2)
+{
+    std::swap(matrix[i1], matrix[i2]);
+}
+
+void Matrix::swapColumns(int j1, int j2)
+{
+    for (int i = 0; i < matrix[0].size(); i++)
+        std::swap(matrix[i][j1], matrix[i][j2]);
 }
 
 double Matrix::det(QVector<QVector<double>> a)
@@ -147,20 +204,24 @@ double Matrix::det(QVector<QVector<double>> a)
     return d;
 }
 
-MatrixException::MatrixException(errors type)
+MatrixException::MatrixException(errors type, QSize a, QSize b)
 {
     switch (type){
+    case MatrixException::ReverseMatrixError:
+        err = "ReverseMatrixError";
+        info = "Can't calculate reverse matrix";
+        break;
     case MatrixException::IndexError:
         err = "IndexError";
-        info = "";
+        info = QString("Can't treat to element (%1, %2)").arg(a.height()).arg(a.width());
         break;
     case MatrixException::MathError:
         err = "MathError";
-        info = "";
+        info = "Can't division by 0";
         break;
     case MatrixException::DeterminantError:
         err = "DeterminateError";
-        info = "Can't calculate determinate of matrix";
+        info = QString("Can't calculate determinate of matrix with size (%1, %2)").arg(a.height()).arg(a.width());
         break;
     case MatrixException::TypeError:
         err = "TypeError";
@@ -168,7 +229,7 @@ MatrixException::MatrixException(errors type)
         break;
     case MatrixException::errors::SizeError:
         err = "SizeError";
-        info = "";
+        info = QString("Can't do this operation with matrixs sizes of (%1, %2) and (%3, %4)").arg(a.height()).arg(a.width()).arg(b.height()).arg(b.width());
         break;
     }
 }
