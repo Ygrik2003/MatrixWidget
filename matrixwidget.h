@@ -1,28 +1,30 @@
 #ifndef MATRIXWIDGET_H
 #define MATRIXWIDGET_H
 
+#include "matrix.h"
 #include <QTableWidget>
+#include <QHeaderView>
 
 class MatrixWidget : public QTableWidget
 {
     Q_OBJECT
 public:
     MatrixWidget(QWidget *parent = nullptr);
-    MatrixWidget(QSize, QWidget *parent = nullptr);
-    MatrixWidget(QSize, QSize, QWidget *parent = nullptr);
-    MatrixWidget(QSize, QPoint, QWidget *parent = nullptr);
-    MatrixWidget(QSize, QPoint, QSize, QWidget *parent = nullptr);
-    MatrixWidget(QSize, QRect, QWidget *parent = nullptr);
+    MatrixWidget(QSize size, QWidget *parent = nullptr);
+    MatrixWidget(QPoint pos, QSize size, QWidget *parent = nullptr);
+    MatrixWidget(QSize sizeMatrix, QSize size, QWidget *parent = nullptr);
+    MatrixWidget(QSize sizeMatrix, QPoint pos, QSize size, QWidget *parent = nullptr);
+    MatrixWidget(QSize sizeMatrix, QRect geometry, QWidget *parent = nullptr);
 
-    MatrixWidget(const MatrixWidget &);
 
     void setPos(QPoint);
     void setSize(QSize);
-    void setSizeMatrix(QSize);
-    void setSizeMatrix(int, int);
+    void update();
+    Matrix matrix;
 
-private:
-    QSize sizeMatrix;
+private slots:
+    void checkDouble(int row, int column);
+
 
 };
 

@@ -8,8 +8,18 @@
 class MatrixException
 {
 public:
-    MatrixException(QString err, QString info);
+    enum errors
+    {
+        SizeError,
+        IndexError,
+        MathError,
+        DeterminantError,
+        TypeError
+    };
+
+    MatrixException(errors type);
     void printError();
+
 
 private:
     QString err, info;
@@ -18,25 +28,30 @@ private:
 class Matrix
 {
 public:
+    Matrix();
     Matrix(int, int);
     Matrix(QSize);
+    Matrix(const Matrix &);
 
     void setSize(int, int);
     void setSize(QSize);
+    int size();
+    QSize getSize() const;
 
-    QVector<float> &operator[](const int index);
-    Matrix &operator+(Matrix);
-    Matrix &operator-(Matrix);
-    Matrix &operator*(Matrix);
-    Matrix &operator*(const float);
-    friend Matrix &operator*(float, Matrix);
-    Matrix &operator/(const float);
+    QVector<double> &operator[](const int index);
+    Matrix operator+(Matrix);
+    Matrix operator-(Matrix);
+    Matrix operator*(Matrix);
+    Matrix operator*(const double);
+    friend Matrix operator*(const double, Matrix);
+    Matrix operator/(const double);
     Matrix &operator=(const Matrix);
 
-private:
-    Matrix();
+    double determinant();
 
-    QVector<QVector<float>> matrix;
+private:
+    double det(QVector<QVector<double>>);
+    QVector<QVector<double>> matrix;
 };
 
 #endif // MATRIX_H
