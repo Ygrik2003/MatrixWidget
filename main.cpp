@@ -5,7 +5,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    MatrixWidget w(QSize(4, 3), QPoint(0, 0), QSize(500, 500));
+    MatrixWidget w;
+    w.setGeometry(0, 0, 500, 500);
+    w.matrix.setSize(3, 3);
     w.update();
     w.show();
     return a.exec();

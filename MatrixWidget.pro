@@ -11,13 +11,18 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     matrix.cpp \
+    matrixbuttons.cpp \
     matrixwidget.cpp
 
 HEADERS += \
     matrix.h \
+    matrixbuttons.h \
     matrixwidget.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+FORMS += \
+    matrixbuttons.ui
