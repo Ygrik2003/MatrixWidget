@@ -57,8 +57,8 @@ void MatrixWidget::checkDouble(int row, int column)
     }
 }
 
-void MatrixWidget::mouseDoubleClickEvent(QMouseEvent *event)
+void MatrixWidget::mouseDoubleClickEvent(QMouseEvent *)
 {
-    MatrixButtons *mBtns = new MatrixButtons(matrix, lastMatrix);
+    MatrixButtons *mBtns = new MatrixButtons(*this, lastMatrix);
     mBtns->show();
 }

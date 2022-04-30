@@ -77,7 +77,9 @@ public:
     void delColumn(int j); // Удалить j столбец
 
     void addRow(int i, QVector<double> row); // Добавить строку row после i строки исходной матрицы
+    void addRow();
     void addColumn(int j, QVector<double> column); // Добавить столбец column после j столбца исходной матрицы
+    void addColumn();
 
     void swapRows(int i1, int i2); // Меняет местами i1 и i2 строки
     void swapColumns(int j1, int j2); // Меняет местами j1 и j2 столбцы

@@ -2,6 +2,7 @@
 #define MATRIXBUTTONS_H
 
 #include "matrix.h"
+#include "matrixwidget.h"
 
 #include <QWidget>
 
@@ -14,7 +15,7 @@ class MatrixButtons : public QWidget
     Q_OBJECT
 
 public:
-    explicit MatrixButtons(Matrix &matrix, Matrix &lastMatrix, QWidget *parent = nullptr);
+    explicit MatrixButtons(MatrixWidget &matrix, Matrix &lastMatrix, QWidget *parent = nullptr);
     ~MatrixButtons();
 
 private slots:
@@ -22,9 +23,25 @@ private slots:
 
     void on_calcAlgAddBtn_clicked();
 
+    void on_transposeBtn_clicked();
+
+    void on_reverseBtn_clicked();
+
+    void on_delRowBtn_clicked();
+
+    void on_delColBtn_clicked();
+
+    void on_backBtn_clicked();
+
+    void on_swapColsBtn_clicked();
+
+    void on_swapRowsBtn_clicked();
+
+    void on_addRowBtn_clicked();
+
 private:
     Ui::MatrixButtons *ui;
-    Matrix *matrix;
+    MatrixWidget *matrix;
     Matrix *lastMatrix;
 };
 

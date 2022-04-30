@@ -26,7 +26,7 @@ private slots:
 
     // QWidget interface
 protected:
-    void mouseDoubleClickEvent(QMouseEvent *event) override;
+    void mouseDoubleClickEvent(QMouseEvent *) override;
 };
 
 #endif // MATRIXWIDGET_H

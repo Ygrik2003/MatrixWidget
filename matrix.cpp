@@ -147,6 +147,7 @@ void Matrix::transpose()
     for (int i = 0; i < matrix.size(); i++)
         for (int j = 0; j < matrix[i].size(); j++)
             temp.matrix[j][i] = matrix[i][j];
+    matrix = temp.matrix;
 }
 
 void Matrix::reverse()
@@ -165,14 +166,14 @@ void Matrix::reverse()
 
 QVector<double> Matrix::getRow(int i)
 {
-    if (i > matrix.size() || i < 0)
+    if (i >= matrix.size() || i < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(i, 0));
     return matrix[i];
 }
 
 QVector<double> Matrix::getColumn(int j)
 {
-    if (j > matrix[0].size() || j < 0)
+    if (j >= matrix[0].size() || j < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j));
     QVector<double> tmp;
     for (int i = 0; i < size(); i++)
@@ -182,45 +183,52 @@ QVector<double> Matrix::getColumn(int j)
 
 double Matrix::getElement(int i, int j)
 {
-    if ((i > matrix.size() || i < 0) || (j > matrix[0].size() || j < 0))
+    if ((i >= matrix.size() || i < 0) || (j >= matrix[0].size() || j < 0))
         throw MatrixException(MatrixException::errors::IndexError, msize(i, j));
     return matrix[i][j];
 }
 
 void Matrix::setElement(int i, int j, double value)
 {
-    if ((i > matrix.size() || i < 0) || (j > matrix[0].size() || j < 0))
+    if ((i >= matrix.size() || i < 0) || (j >= matrix[0].size() || j < 0))
         throw MatrixException(MatrixException::errors::IndexError, msize(i, j));
     matrix[i][j] = value;
 }
 
 void Matrix::delRow(int i)
 {
-    if (i > matrix.size() || i < 0)
+    if (i >= matrix.size() || i < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(i, 0));
     matrix.remove(i);
 }
 
 void Matrix::delColumn(int j)
 {
-    if (j > matrix[0].size() || j < 0)
+    if (j >= matrix[0].size() || j < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j));
-    for (int i = 0; i < matrix[0].size(); i++)
+    for (int i = 0; i < matrix.size(); i++)
         matrix[i].remove(j);
 }
 
 void Matrix::addRow(int i, QVector<double> a)
 {
-    if (i > matrix.size() || i < 0)
+    if (i >= matrix.size() || i < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(i, 0));
     if (matrix[0].size() != a.size())
         throw MatrixException(MatrixException::errors::SizeError, getSize(), msize(1, a.size()));
     matrix.insert(i, a);
 }
 
+void Matrix::addRow()
+{
+    QVector<double> tmp;
+    tmp.resize(matrix[0].size());
+    matrix.append(tmp);
+}
+
 void Matrix::addColumn(int j, QVector<double> a)
 {
-    if (j > matrix[0].size() || j < 0)
+    if (j >= matrix[0].size() || j < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j));
     if (matrix.size() != a.size())
         throw MatrixException(MatrixException::errors::SizeError, getSize(), msize(a.size(), 1));
@@ -228,20 +236,26 @@ void Matrix::addColumn(int j, QVector<double> a)
         matrix[i].insert(j, a[i]);
 }
 
+void Matrix::addColumn()
+{
+    for (int i = 0; i < matrix.size(); i++)
+        matrix[i].append(0);
+}
+
 void Matrix::swapRows(int i1, int i2)
 {
-    if (i1 > matrix.size() || i1 < 0)
+    if (i1 >= matrix.size() || i1 < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(i1, 0));
-    if (i2 > matrix.size() || i2 < 0)
+    if (i2 >= matrix.size() || i2 < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(i2, 0));
     std::swap(matrix[i1], matrix[i2]);
 }
 
 void Matrix::swapColumns(int j1, int j2)
 {
-    if (j1 > matrix[0].size() || j1 < 0)
+    if (j1 >= matrix[0].size() || j1 < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j1));
-    if (j2 > matrix[0].size() || j2 < 0)
+    if (j2 >= matrix[0].size() || j2 < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j2));
 
     for (int i = 0; i < matrix[0].size(); i++)

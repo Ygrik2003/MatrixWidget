@@ -113,6 +113,249 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="reverseBtn">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>130</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Reverse</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="transposeBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Transpose</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="iDelEdit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>190</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>i</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delRowBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete row</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="jDelEdit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>250</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>j</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="delColBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>250</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Delete column</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="backBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>530</y>
+     <width>431</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Back</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="i2Edit">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>310</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>i2</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="i1Edit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>310</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>i1</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="swapRowsBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>310</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Swap rows</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="j2Edit">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>370</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>j2</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="j1Edit">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>370</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>j1</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="swapColsBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>370</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Swap columns</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addRowBtn">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>430</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add row</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="addColBtn">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>430</y>
+     <width>200</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Add column</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
