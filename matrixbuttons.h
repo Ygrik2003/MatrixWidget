@@ -39,6 +39,8 @@ private slots:
 
     void on_addRowBtn_clicked();
 
+    void on_addColBtn_clicked();
+
 private:
     Ui::MatrixButtons *ui;
     MatrixWidget *matrix;

@@ -15,6 +15,7 @@ public:
     void setSize(QSize);
     void buttonMenu();
     void update();
+    void scrollBarVisibility(bool);
     Matrix matrix;
 
 private:
@@ -27,6 +28,10 @@ private slots:
     // QWidget interface
 protected:
     void mouseDoubleClickEvent(QMouseEvent *) override;
+
+    // QObject interface
+protected:
+    void timerEvent(QTimerEvent *event) override;
 };
 
 #endif // MATRIXWIDGET_H

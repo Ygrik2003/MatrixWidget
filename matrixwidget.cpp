@@ -39,12 +39,25 @@ void MatrixWidget::update()
             item(i, j)->setText(QString::number(matrix.getElement(i, j)));
         }
     }
+    repaint();
+}
+
+void MatrixWidget::scrollBarVisibility(bool flag)
+{
+    if (flag) {
+        this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+    } else {
+        this->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        this->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    }
 }
 
 void MatrixWidget::checkDouble(int row, int column)
 {
     bool check;
     double tmp = item(row, column)->text().toDouble(&check);
+
     if (check) {
         matrix.setElement(row, column, tmp);
     } else {
@@ -61,4 +74,9 @@ void MatrixWidget::mouseDoubleClickEvent(QMouseEvent *)
 {
     MatrixButtons *mBtns = new MatrixButtons(*this, lastMatrix);
     mBtns->show();
+}
+
+
+void MatrixWidget::timerEvent(QTimerEvent *event)
+{
 }
