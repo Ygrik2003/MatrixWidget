@@ -51,7 +51,6 @@ public:
 
     void setSize(int, int);
     void setSize(msize);
-    int size() const;
     msize getSize() const;
 
     Matrix operator+(Matrix);

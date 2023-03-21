@@ -28,9 +28,6 @@ private slots:
     // QWidget interface
 protected:
     void mouseDoubleClickEvent(QMouseEvent *) override;
-
-    // QObject interface
-protected:
     void timerEvent(QTimerEvent *event) override;
 };
 

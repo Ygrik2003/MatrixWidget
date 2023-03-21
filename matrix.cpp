@@ -38,11 +38,6 @@ void Matrix::setSize(msize size)
     this->setSize(size.height, size.width);
 }
 
-int Matrix::size() const
-{
-    return this->matrix.size();
-}
-
 msize Matrix::getSize() const
 {
     return msize(matrix.size(), matrix[0].size());
@@ -84,7 +79,7 @@ Matrix Matrix::operator*(const double number)
 Matrix operator*(const double number, Matrix matrix)
 {
     Matrix temp(matrix.getSize());
-    for (int i = 0; i < matrix.size(); i++)
+    for (int i = 0; i < matrix.getSize().height; i++)
         for (int j = 0; j < matrix.matrix[i].size(); j++)
             temp.matrix[i][j] = matrix.matrix[i][j] * number;
     return temp;
@@ -176,7 +171,7 @@ QVector<double> Matrix::getColumn(int j)
     if (j >= matrix[0].size() || j < 0)
         throw MatrixException(MatrixException::errors::IndexError, msize(0, j));
     QVector<double> tmp;
-    for (int i = 0; i < size(); i++)
+    for (int i = 0; i < this->getSize().height; i++)
         tmp.append(matrix[i][j]);
     return tmp;
 }

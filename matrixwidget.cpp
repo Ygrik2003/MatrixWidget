@@ -25,11 +25,11 @@ void MatrixWidget::setSize(QSize size)
 
 void MatrixWidget::update()
 {
-    this->setRowCount(matrix.size());
+    this->setRowCount(matrix.getSize().height);
     this->setColumnCount(matrix.getRow(0).size());
 
-    for (int i = 0; i < matrix.size(); i++) {
-        this->setRowHeight(i, (size().height() - 1) / matrix.size());
+    for (int i = 0; i < matrix.getSize().height; i++) {
+        this->setRowHeight(i, (size().height() - 1) / matrix.getSize().height);
         for (int j = 0; j < matrix.getRow(i).size(); j++)
         {
             this->setColumnWidth(j, (size().width() - 1) / matrix.getRow(i).size());
