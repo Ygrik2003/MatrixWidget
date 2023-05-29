@@ -17,7 +17,13 @@ Matrix::Matrix(msize size)
 
 Matrix::Matrix(const Matrix &a)
 {
-    matrix = a.matrix;
+    msize size = a.getSize();
+    matrix.resize(size.height);
+    for (int i = 0; i < size.height; i++)
+    {
+        matrix[i].resize(size.width);
+        matrix[i] = a.matrix[i];
+    }
 }
 
 void Matrix::setSize(int height, int width)

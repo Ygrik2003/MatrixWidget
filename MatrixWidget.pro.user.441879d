@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 9.0.1, 2023-04-28T10:01:31. -->
+<!-- Written by QtCreator 6.0.2, 2023-04-18T19:26:56. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{83e05274-6ea7-46db-a18a-00abfd245fd1}</value>
+  <value type="QByteArray">{441879df-b759-4095-ae8a-9a0cf7464522}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -54,7 +54,6 @@
    <value type="QString" key="EditorConfiguration.ignoreFileTypes">*.md, *.MD, Makefile</value>
    <value type="bool" key="EditorConfiguration.inEntireDocument">false</value>
    <value type="bool" key="EditorConfiguration.skipTrailingWhitespace">true</value>
-   <value type="bool" key="EditorConfiguration.tintMarginArea">true</value>
   </valuemap>
  </data>
  <data>
@@ -71,6 +70,11 @@
    <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>
+   <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey">
+    <value type="QString">-fno-delayed-template-parsing</value>
+   </valuelist>
+   <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
+   <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.BuildSystem</value>
    <valuemap type="QVariantMap" key="ClangTools">
     <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
@@ -90,16 +94,16 @@
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{483557cb-79dc-460b-b8f7-e81a095a23ad}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Desktop Qt 6.2.4 MinGW 64-bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Desktop Qt 6.2.4 MinGW 64-bit</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">qt.qt6.624.win64_mingw_kit</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="qlonglong" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/run/media/ygrik/Soft/Projects/Qt Projects/MatrixWidget/../build-MatrixWidget-Desktop-Debug</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/run/media/ygrik/Soft/Projects/Qt Projects/build-MatrixWidget-Desktop-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:\Projects\Qt Projects\build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Debug</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">D:/Projects/Qt Projects/build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -137,8 +141,8 @@
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/run/media/ygrik/Soft/Projects/Qt Projects/MatrixWidget/../build-MatrixWidget-Desktop-Release</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/run/media/ygrik/Soft/Projects/Qt Projects/build-MatrixWidget-Desktop-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:\Projects\Qt Projects\build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">D:/Projects/Qt Projects/build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -174,11 +178,12 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Release</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.2">
     <value type="int" key="EnableQmlDebugging">0</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/run/media/ygrik/Soft/Projects/Qt Projects/MatrixWidget/../build-MatrixWidget-Desktop-Profile</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">/run/media/ygrik/Soft/Projects/Qt Projects/build-MatrixWidget-Desktop-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:\Projects\Qt Projects\build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Profile</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">D:/Projects/Qt Projects/build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
@@ -214,6 +219,7 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Profile</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4BuildConfiguration</value>
     <value type="int" key="Qt4ProjectManager.Qt4BuildConfiguration.BuildConfiguration">0</value>
+    <value type="int" key="QtQuickCompiler">0</value>
     <value type="int" key="SeparateDebugInfo">0</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.BuildConfigurationCount">3</value>
@@ -237,14 +243,14 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:/run/media/ygrik/Soft/Projects/Qt Projects/MatrixWidget/MatrixWidget.pro</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">/run/media/ygrik/Soft/Projects/Qt Projects/MatrixWidget/MatrixWidget.pro</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Projects/Qt Projects/MatrixWidget/MatrixWidget.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt Projects/MatrixWidget/MatrixWidget.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/run/media/ygrik/Soft/Projects/Qt Projects/build-MatrixWidget-Desktop-Debug</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Projects/Qt Projects/build-MatrixWidget-Desktop_Qt_6_2_4_MinGW_64_bit-Debug</value>
    </valuemap>
    <value type="qlonglong" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
